@@ -1,0 +1,11 @@
+# Prevent directory listing
+Options -Indexes
+
+# Deny all access to the folder
+Order deny,allow
+Deny from all
+
+<FilesMatch "\.(sqlite|db)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
